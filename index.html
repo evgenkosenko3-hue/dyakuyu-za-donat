@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Дякуємо за донат 🇺🇦</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+
+margin:0;min-height:100vh;display:flex;align-items:center;
+
+justify-content:center;padding:20px;font-family:Arial,sans-serif;
+
+color:white;text-align:center;
+
+background:linear-gradient(145deg,#061a38,#0757a6,#08213d);
+
+}
+
+.card{
+
+max-width:460px;width:100%;padding:35px 24px;
+
+border:1px solid #ffffff40;border-radius:25px;
+
+background:#ffffff12;box-shadow:0 15px 50px #0005;
+
+animation:appear 1s ease;
+
+}
+
+.flag{font-size:45px}
+
+h1{font-size:32px;color:#ffdf55}
+
+p{font-size:18px;line-height:1.7}
+
+.thanks{font-size:23px;font-weight:bold}
+
+.divider{width:80px;height:3px;margin:24px auto;background:#ffdf55}
+
+.wish{min-height:110px;display:flex;align-items:center;justify-content:center;color:#fff3b0;font-size:19px}
+
+.heart{font-size:32px}
+
+.footer{font-size:15px;margin-top:25px}
+
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="flag">🇺🇦 💙💛</div>
+
+<h1>Дякуємо за донат!</h1>
+
+<p class="thanks">Разом до Перемоги! 🇺🇦</p>
+
+<div class="divider"></div>
+
+<p>Твоя підтримка — це більше, ніж донат. Це добро, віра та надія.</p>
+
+<div class="heart">❤️</div>
+
+<p id="wish" class="wish"></p>
+
+<div class="divider"></div>
+
+<p>Кожен внесок наближає нашу Перемогу!</p>
+
+<div class="footer">Слава Україні! Героям слава! 💙💛</div>
+
+</div>
+
+<script>
+
+const wishes=[
+
+"💙 Нехай добро повертається до тебе сторицею!",
+
+"🇺🇦 Бажаємо миру, перемоги та щасливого майбутнього!",
+
+"❤️ Нехай у житті завжди буде місце для любові!",
+
+"🕊️ Нехай якнайшвидше настане мирне небо над Україною!",
+
+"✨ Бажаємо здоров'я, щастя та здійснення мрій!",
+
+"🤝 Нехай поруч завжди будуть щирі люди!",
+
+"💛 Дякуємо за твоє добре серце!",
+
+"🌻 Нехай кожен день приносить хороші новини!",
+
+"💙 Бажаємо сил, віри та незламності!",
+
+"🙏 Нехай усі захисники повернуться додому живими й здоровими!",
+
+"🌟 Нехай твоя доброта змінює світ на краще!",
+
+"💐 Бажаємо затишку вдома та щастя в серці!",
+
+"🕊️ Нехай у кожній родині панують мир і спокій!",
+
+"🇺🇦 Разом ми сильніші! До Перемоги!",
+
+"❤️ Нехай твоє добро приносить надію іншим!",
+
+"☀️ Бажаємо світлих днів і великих перемог у житті!",
+
+"💙💛 Твоя допомога справді важлива. Дякуємо!",
+
+"🌈 Нехай завжди буде місце для надії та радості!",
+
+"🤗 Нехай тебе оточують турбота й любов!",
+
+"🌻 Нехай Україна квітне під мирним небом!"
+
+];
+
+let last=-1;
+
+try{last=Number(sessionStorage.getItem("lastWish"))}catch(e){}
+
+let n;
+
+do{n=Math.floor(Math.random()*wishes.length)}
+
+while(wishes.length>1&&n===last);
+
+document.getElementById("wish").textContent=wishes[n];
+
+try{sessionStorage.setItem("lastWish",n)}catch(e){}
+
+</script>
+
+</body>
+
+</html>
